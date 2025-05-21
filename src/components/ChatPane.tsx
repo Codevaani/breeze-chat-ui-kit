@@ -21,6 +21,11 @@ const ChatPane: React.FC<ChatPaneProps> = ({ toggleSidebar }) => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [selectedConversation?.messages]);
 
+  // Get a title for the conversation from the selected conversation
+  const conversationTitle = selectedConversation 
+    ? (selectedConversation.title || "New Conversation") 
+    : "New Conversation";
+
   return (
     <>
       {/* Chat header */}
@@ -35,7 +40,7 @@ const ChatPane: React.FC<ChatPaneProps> = ({ toggleSidebar }) => {
             <Menu size={20} />
           </Button>
           <h1 className="text-lg font-medium text-gray-800 dark:text-gray-200">
-            {selectedConversation?.lastMessagePreview || "New Conversation"}
+            {conversationTitle}
           </h1>
         </div>
       </header>

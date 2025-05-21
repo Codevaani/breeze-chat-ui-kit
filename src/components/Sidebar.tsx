@@ -1,16 +1,15 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Plus, Clock, User } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useConversations } from "@/hooks/useConversations";
-import { useAuth } from "@clerk/clerk-react";
+import { useUser } from "@clerk/clerk-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { SignOutButton, UserButton } from "@clerk/clerk-react";
 
 const Sidebar = () => {
   const { conversations, isLoading, createNewConversation, selectConversation, selectedConversationId } = useConversations();
-  const { user } = useAuth();
+  const { user } = useUser();
 
   const handleNewChat = () => {
     createNewConversation();
