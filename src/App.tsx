@@ -11,7 +11,7 @@ import SignUp from "./pages/SignUp";
 import NotFound from "./pages/NotFound";
 
 // Get the Clerk publishable key from environment variables
-const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY || "";
+const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
 // Create a new query client
 const queryClient = new QueryClient();
